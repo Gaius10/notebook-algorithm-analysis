@@ -7,9 +7,10 @@ typedef struct natural* natural_t;
 
 // Management of naturals...
 natural_t natural_create(unsigned long long n);
+void natural_print(const natural_t number);
 void natural_destroy(natural_t* number);
 
-void multiplication(const natural_t num1, const natural_t num2, natural_t *result);
+natural_t multiplication(const natural_t num1, const natural_t num2);
 
 #endif
 

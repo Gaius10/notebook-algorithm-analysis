@@ -46,16 +46,21 @@ natural_t _natural_create_from_char(char* digits, unsigned length) {
     return number;
 }
 
+void natural_print(const natural_t number) {
+    for (unsigned i = 0; i < number->length; i++) {
+        printf("%c", number->digits[i]);
+    }
+}
+
 void natural_destroy(natural_t* number) {
     free((*number)->digits);
     free(*number);
     number = NULL;
 }
 
-void multiplication(
+natural_t multiplication(
     const natural_t num1,
-    const natural_t num2,
-    natural_t *result
+    const natural_t num2
 ) {
     char* result_buffer = malloc(sizeof(char) * (num1->length + num2->length));
     int carry = 0;
@@ -76,7 +81,6 @@ void multiplication(
 
     result_buffer[0] += carry;
 
-    *result = _natural_create_from_char(result_buffer, num1->length + num2->length);
-
-    free(result_buffer);
+    natural_t result = _natural_create_from_char(result_buffer, num1->length + num2->length);
+    return result;
 }
