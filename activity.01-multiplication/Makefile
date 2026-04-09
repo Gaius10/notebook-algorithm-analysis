@@ -4,7 +4,7 @@ CFLAGS  := -std=c11 -Wall -Wextra -Wpedantic -O3
 LDFLAGS :=
 LDLIBS  := -lm
 TARGET  := main
-OBJS    := build/main.o build/multiplication.o
+OBJS    := build/main.o build/multiplication.o build/natural.o
 
 .PHONY: all clean run
 
