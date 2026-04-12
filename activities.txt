@@ -1,0 +1,7 @@
+1. Implementar a multiplicação de Karatsuba (com truque de Gauss).
+
+2. Dada uma matriz nxn, em que cada linha e cada coluna estão ordenadas, descreva um algoritmo para encontrar uma dada chave k.
+
+3. Dado um conjunto de n pontos em um plano cartesiano, encontre um algoritmo que retorne a distância entre os dois pontos que estão mais próximos um do outro.
+
+4. Dado um vetor (não ordenado) de números reais encontre um pico (número que seja maior que seu elemento da direita e da esquerda).
