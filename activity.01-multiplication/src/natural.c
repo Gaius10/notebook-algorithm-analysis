@@ -84,10 +84,55 @@ unsigned natural_get_length(const natural_t number) {
     return number->length;
 }
 
-unsigned natural_get_digit(const natural_t number, unsigned int index) {
+uint8_t natural_get_digit(const natural_t number, unsigned int index) {
     if (index >= natural_get_length(number)) {
         return 0;
     }
 
     return number->digits[index] - '0';
+}
+
+natural_t natural_get_slice(const natural_t number, unsigned start, unsigned end) {
+    if (
+        start >= natural_get_length(number) ||
+        end > natural_get_length(number) ||
+        start >= end
+    ) {
+        return NULL;
+    }
+
+    return natural_create_from_chars(number->digits + start, end - start);
+}
+
+natural_t natural_e(const natural_t number, unsigned power_of_ten) {
+    unsigned new_number_length = number->length + power_of_ten;
+    char* chars = malloc(new_number_length);
+
+    unsigned i = 0;
+
+    while (i < number->length) {
+        chars[i] = number->digits[i];
+        i++;
+    }
+
+    while (i < new_number_length) {
+        chars[i] = '0';
+        i++;
+    }
+
+    return natural_create_from_chars(chars, new_number_length);
+}
+
+bool natural_is_equal(const natural_t num1, const natural_t num2) {
+    if (natural_get_length(num1) != natural_get_length(num2)) {
+        return false;
+    }
+
+    for (unsigned i = 0; i < natural_get_length(num1); i++) {
+        if (natural_get_digit(num1, i) != natural_get_digit(num2, i)) {
+            return false;
+        }
+    }
+
+    return true;
 }
