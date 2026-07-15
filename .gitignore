@@ -1,3 +1,5 @@
 main.zip
 **/build/*
 !**/build/.gitkeep
+**/tmp/*
+!**/tmp/.gitkeep
