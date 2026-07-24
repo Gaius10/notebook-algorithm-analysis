@@ -66,12 +66,12 @@ int main() {
 
     quick_sort(precos, 0, n - 1);
 
-    FILE* ORDERED_FILE = fopen("tmp/ordered.txt", "w");
-    for (unsigned int i = 0; i < n; i++) {
-        // printf("%u\n", precos[i]);
-        fprintf(ORDERED_FILE, "%u\n", precos[i]);
-    }
-    fclose(ORDERED_FILE);
+    // FILE* ORDERED_FILE = fopen("tmp/ordered.txt", "w");
+    // for (unsigned int i = 0; i < n; i++) {
+    //     // printf("%u\n", precos[i]);
+    //     fprintf(ORDERED_FILE, "%u\n", precos[i]);
+    // }
+    // fclose(ORDERED_FILE);
 
     unsigned int descontos = 0;
     for (int i = n - 3; i >= 0; i -= 3) {
