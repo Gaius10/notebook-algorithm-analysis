@@ -44,6 +44,7 @@ int main() {
         return 0;
     }
 
+    // Numero de elementos veio errado nos testes...
     if (n != 8) {
         n = n - 1;
     }
