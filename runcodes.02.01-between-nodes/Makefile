@@ -9,14 +9,14 @@ run: main
 	./main
 
 test: main
-	cat test-cases/1.in | ./main > 1.out
-	cat test-cases/2.in | ./main > 2.out
-	cat test-cases/3.in | ./main > 3.out
-	cat test-cases/4.in | ./main > 4.out
+	cat test-cases/1.in | ./main > tmp/1.out
+	cat test-cases/2.in | ./main > tmp/2.out
+	cat test-cases/3.in | ./main > tmp/3.out
+	cat test-cases/4.in | ./main > tmp/4.out
 
-	diff 1.out test-cases/1.out
-	diff 2.out test-cases/2.out
-	diff 3.out test-cases/3.out
+	diff tmp/1.out test-cases/1.out
+	diff tmp/2.out test-cases/2.out
+	diff tmp/3.out test-cases/3.out
 
 clean:
 	rm -rf main tmp/*
